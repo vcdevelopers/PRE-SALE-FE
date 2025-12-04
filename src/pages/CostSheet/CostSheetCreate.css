@@ -1,0 +1,781 @@
+.cs-page {
+  padding: 24px;
+  background: #f5f7fb;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.cs-page-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cs-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.cs-page-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.cs-page-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.cs-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.cs-card {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.cs-card-header {
+  width: 100%;
+  padding: 12px 16px;
+  background: #f1f5f9;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.cs-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #0f172a;
+}
+
+.cs-chevron {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #64748b;
+  border-bottom: 2px solid #64748b;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.cs-chevron-open {
+  transform: rotate(-135deg);
+}
+
+.cs-card-body {
+  padding: 16px;
+}
+
+.cs-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px 16px;
+}
+
+@media (max-width: 900px) {
+  .cs-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .cs-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cs-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.cs-field--full {
+  grid-column: 1 / -1;
+}
+
+.cs-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 4px;
+}
+
+.cs-input,
+.cs-select,
+.cs-textarea {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #d4d4d8;
+  padding: 7px 10px;
+  font-size: 0.9rem;
+  outline: none;
+  background-color: #ffffff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.cs-input:focus,
+.cs-select:focus,
+.cs-textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.15);
+}
+
+.cs-input-readonly {
+  background-color: #f8fafc;
+  cursor: not-allowed;
+}
+
+.cs-textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.cs-help-text {
+  margin-top: 3px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.cs-button {
+  border-radius: 6px;
+  border: 1px solid transparent;
+  padding: 7px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cs-button-primary {
+  background: #1d4ed8;
+  color: #ffffff;
+}
+
+.cs-button-primary:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.cs-button-primary:hover:not(:disabled) {
+  background: #1e40af;
+}
+
+.cs-button-light {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.cs-button-light:hover {
+  background: #d4d4d8;
+}
+
+.cs-button-outline {
+  background: transparent;
+  color: #1d4ed8;
+  border-color: #bfdbfe;
+}
+
+.cs-button-outline:hover {
+  background: #eff6ff;
+}
+
+.cs-button + .cs-button {
+  margin-left: 4px;
+}
+
+.cs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* table */
+
+.cs-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 8px;
+}
+
+.cs-table-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cs-table-row > div {
+  padding: 6px 8px;
+  display: flex;
+  align-items: center;
+}
+
+.cs-table-header {
+  background: #f9fafb;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.cs-table-header > div {
+  border-right: 1px solid #e5e7eb;
+}
+
+.cs-table-header > div:last-child {
+  border-right: none;
+}
+
+/* 6-column variant is handled by grid automatically */
+.cs-table-row .cs-input,
+.cs-table-row .cs-select {
+  width: 100%;
+}
+
+/* 5-column variant used for Payment Plan (last col = delete icon) */
+.cs-table-row--5 {
+  grid-template-columns: 2fr 1fr 1.2fr 1.2fr 40px;
+}
+
+.cs-table-cell-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* taxes */
+
+.cs-taxes-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.cs-taxes-list {
+  flex: 1 1 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.cs-checkbox input {
+  transform: translateY(1px);
+}
+
+.cs-checkbox-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+.cs-taxes-total {
+  min-width: 180px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cs-taxes-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.cs-taxes-amount {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* payment */
+
+.cs-payment-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+/* summary */
+
+.cs-summary-card {
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cs-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.cs-summary-row-final {
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px dashed #d1d5db;
+  font-weight: 600;
+}
+
+.cs-summary-amount {
+  font-variant-numeric: tabular-nums;
+}
+
+/* errors / loader */
+
+.cs-error-banner {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+}
+
+.cs-error-text {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  color: #b91c1c;
+}
+
+.cs-total-percentage {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #b91c1c; /* red – error */
+}
+
+.cs-total-percentage--warn {
+  color: #b91c1c;
+}
+
+.cs-loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  border: 3px solid #cbd5f5;
+  border-top-color: #1d4ed8;
+  animation: cs-spin 0.6s linear infinite;
+  margin-bottom: 8px;
+}
+
+@keyframes cs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.cs-muted {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+/* page center */
+
+.cs-page-inner.cs-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+/* template chip */
+
+.cs-template-chip {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  display: inline-block;
+}
+
+/* buttons / icons */
+
+.cs-icon-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 4px;
+  color: #9ca3af;
+}
+
+.cs-icon-button:hover {
+  color: #ef4444;
+}
+
+/* offers */
+
+.cs-offer-list {
+  margin: 6px 0 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.cs-offer-list li + li {
+  margin-top: 2px;
+}
+
+
+/* ===== Payment plan toggle – pill style ===== */
+
+.cs-radio-group {
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cs-radio {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 2px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.cs-radio input {
+  display: none;
+}
+
+.cs-radio span {
+  display: block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.cs-radio input:checked + span {
+  background: #1d4ed8;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3);
+}
+
+/* small gap for actions column in plan table */
+
+.cs-table-actions {
+  justify-content: center;
+}
+
+/* ===== Attachments dropzone ===== */
+
+.cs-attachments-dropzone {
+  border-radius: 12px;
+  border: 2px dashed #e5e7eb;
+  background: #f9fafb;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.cs-attachments-icon {
+  font-size: 2rem;
+  line-height: 1;
+  color: #9ca3af;
+}
+
+.cs-attachments-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.cs-attachments-checkbox {
+  margin-top: 8px;
+}
+
+.cs-attachments-list {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+/* Small helper hint text */
+.cs-hint {
+  font-size: 0.78rem;
+  color: #6b7280;
+  margin-left: 4px;
+}
+
+/* Statutory charges card (parking, dev, etc.) */
+.cs-statutory-box {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px dashed #e5e7eb;
+  background: #fdfdfb;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Inline field layout inside statutory box */
+.cs-field-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cs-field-inline .cs-label {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* Bullet list for statutory line items */
+.cs-bullet-list {
+  list-style: none;
+  margin: 6px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.cs-bullet-item {
+  padding: 4px 0;
+  border-bottom: 1px dashed #e5e7eb;
+}
+
+.cs-bullet-item:last-child {
+  border-bottom: none;
+}
+
+.cs-bullet-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cs-bullet-label {
+  font-weight: 500;
+}
+
+.cs-bullet-amount {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.cs-bullet-hint {
+  margin-top: 2px;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Final amount – big & green */
+.cs-final-amount {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #ecfdf3;
+  color: #166534;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* ===== Terms & Conditions preview ===== */
+
+.cs-tnc-preview {
+  margin-top: 8px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  /* full text – no scroll */
+  max-height: none;
+  overflow: visible;
+}
+
+.cs-tnc-preview-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+.cs-tnc-list {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.78rem;   /* small, neat */
+  line-height: 1.4;
+  color: #111827;
+}
+
+.cs-tnc-empty {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* ✅ NEW COST BREAKDOWN STYLES */
+
+.cs-cost-section {
+  margin-bottom: 24px;
+}
+
+.cs-cost-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.cs-cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cs-cost-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.cs-cost-amount {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #111827;
+}
+
+.cs-cost-subtotal {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  font-weight: 600;
+  color: #1e40af;
+}
+
+.cs-cost-subtotal .cs-cost-amount {
+  color: #1e40af;
+  font-size: 1.05rem;
+}
+
+.cs-possession-section {
+  background: #fefce8;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #fde047;
+}
+
+.cs-possession-section .cs-cost-section-title {
+  border-bottom-color: #fde047;
+}
+
+.cs-cost-final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: #dcfce7;
+  border: 2px solid #22c55e;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #166534;
+  margin-top: 20px;
+}
+
+.cs-cost-final .cs-cost-amount {
+  font-size: 1.4rem;
+  color: #166534;
+}
+
+/* ✅ PARKING SECTION STYLES */
+
+.cs-parking-section {
+  margin: 12px 0;
+}
+
+.cs-parking-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  border: 1px solid #bae6fd;
+}
+
+.cs-parking-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.cs-parking-count {
+  min-width: 90px;
+}
+
+.cs-parking-price {
+  min-width: 150px;
+}
+
+.cs-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}

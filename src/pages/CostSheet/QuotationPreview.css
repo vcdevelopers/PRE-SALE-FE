@@ -1,0 +1,552 @@
+/* Page background */
+.qp-page {
+  background-color: #f5f5f7;
+  min-height: 100vh;
+  padding: 32px 24px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+}
+
+/* Outer card – same feel as sample screenshot */
+.qp-inner {
+  max-width: 95%;
+  margin: 0 auto 40px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  padding: 24px 28px 32px;
+  box-shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.qp-inner-loading {
+  text-align: center;
+  font-size: 14px;
+  padding: 40px 0;
+}
+
+/* Sections */
+.qp-section {
+  margin-bottom: 28px;
+}
+
+.qp-section-header {
+  margin-bottom: 24px;
+}
+
+/* Titles / headings */
+.qp-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #5b4fff;
+  margin: 0 0 12px;
+}
+
+.qp-section-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #5b4fff;
+  margin: 0 0 10px;
+}
+
+/* Header meta row */
+.qp-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.qp-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.qp-meta-line {
+  font-size: 13px;
+  color: #374151;
+}
+
+.qp-meta-label {
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.qp-meta-value {
+  font-weight: 400;
+  color: #111827;
+}
+
+.qp-header-right {
+  font-size: 13px;
+  color: #374151;
+  white-space: nowrap;
+}
+
+/* Cards / panels */
+.qp-panel {
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 16px 20px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+}
+
+.qp-panel-soft {
+  background-color: #faf5ff;
+  border-color: #efe4ff;
+}
+
+/* Customer block */
+.qp-cust-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.qp-cust-address {
+  font-size: 13px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.qp-cust-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.qp-cust-col {
+  min-width: 220px;
+}
+
+.qp-cust-col-right {
+  text-align: left;
+}
+
+.qp-label-value {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.qp-label {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.qp-value {
+  color: #111827;
+}
+
+/* Tables */
+.qp-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.qp-table thead tr {
+  background-color: #f9fafb;
+}
+
+.qp-table thead th {
+  padding: 10px 14px;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qp-table tbody td {
+  padding: 10px 14px;
+  color: #111827;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.qp-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.qp-align-right {
+  text-align: right;
+}
+
+/* Header top row with download button */
+.qp-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+/* Download PDF button */
+.qp-download-btn {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.25);
+}
+
+.qp-download-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.qp-plan-meta {
+  font-size: 13px;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+/* ============ NEW COST BREAKDOWN STYLES ============ */
+
+/* Print-only unit details - Hidden on screen, shown in print */
+.qp-print-only {
+  display: none;
+}
+
+.qp-unit-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.qp-unit-detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qp-unit-detail-row:last-child {
+  border-bottom: none;
+}
+
+.qp-unit-detail-row .qp-label {
+  font-weight: 600;
+  color: #374151;
+}
+
+.qp-unit-detail-row .qp-value {
+  font-weight: 500;
+  color: #111827;
+}
+
+.qp-cost-section {
+  margin-bottom: 24px;
+}
+
+.qp-cost-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 12px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.qp-cost-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.qp-cost-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.qp-cost-line span:first-child {
+  color: #374151;
+  font-weight: 500;
+}
+
+.qp-cost-amount {
+  font-weight: 600;
+  color: #111827;
+  font-variant-numeric: tabular-nums;
+}
+
+.qp-cost-subtotal {
+  background-color: #ede9ff;
+  border: 1px solid #d8b4fe;
+  margin-top: 4px;
+}
+
+.qp-cost-subtotal span:first-child {
+  color: #4c1d95;
+  font-weight: 600;
+}
+
+.qp-cost-subtotal .qp-cost-amount {
+  color: #5b21b6;
+  font-size: 15px;
+}
+
+.qp-possession-section {
+  background-color: #fef3c7;
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #fde047;
+}
+
+.qp-possession-section .qp-cost-section-title {
+  color: #92400e;
+  border-bottom-color: #fde047;
+}
+
+.qp-possession-section .qp-cost-line {
+  background-color: #fffbeb;
+}
+
+.qp-possession-section .qp-cost-subtotal {
+  background-color: #fde047;
+  border-color: #facc15;
+}
+
+.qp-possession-section .qp-cost-subtotal span:first-child {
+  color: #713f12;
+}
+
+.qp-possession-section .qp-cost-subtotal .qp-cost-amount {
+  color: #854d0e;
+}
+
+/* Summary before Grand Total */
+.qp-cost-summary {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f0fdf4;
+  border-radius: 12px;
+  border: 1px solid #86efac;
+}
+
+.qp-cost-summary-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #166534;
+  font-weight: 500;
+}
+
+.qp-cost-summary-line .qp-cost-amount {
+  color: #15803d;
+  font-weight: 600;
+}
+
+.qp-cost-summary-line:not(:last-child) {
+  border-bottom: 1px solid #bbf7d0;
+}
+
+/* Grand Total */
+.qp-cost-final {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #5b21b6, #7c3aed);
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(91, 33, 182, 0.3);
+}
+
+.qp-cost-final span:first-child {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.qp-cost-final .qp-cost-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .qp-page {
+    padding: 20px 12px;
+  }
+
+  .qp-inner {
+    padding: 20px 16px 24px;
+  }
+
+  .qp-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .qp-header-right {
+    white-space: normal;
+  }
+
+  .qp-cust-grid {
+    flex-direction: column;
+  }
+
+  .qp-cost-line {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .qp-cost-final {
+    padding: 16px;
+  }
+
+  .qp-cost-final span:first-child {
+    font-size: 14px;
+  }
+
+  .qp-cost-final .qp-cost-amount {
+    font-size: 18px;
+  }
+}
+
+/* ============ PRINT STYLES ============ */
+@media print {
+  /* Root ko free rakho */
+  @page {
+    margin: 2mm 2mm;
+  }
+
+  header,
+  nav,
+  footer,
+  .app-header,
+  .app-footer,
+  .app-sidebar,
+  .sidebar,
+  .main-navbar {
+    display: none !important;
+  }
+
+  /* Jo main content wrapper hai usko full page pe lao */
+  .app-main,
+  .layout-content,
+  .page-wrapper {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  html,
+  body,
+  #root {
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+
+  * {
+    overflow: visible !important;
+  }
+
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .qp-page {
+    background: #ffffff !important;
+    padding: 0 !important;
+    min-height: auto !important;
+  }
+
+  .qp-inner {
+    max-width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border: none !important;
+    padding: 12mm 10mm !important;
+  }
+
+  /* ✅ HIDE: Header, Customer info, Project info, Download button */
+  .qp-section-header,
+  .qp-download-btn,
+  .qp-print-hide {
+    display: none !important;
+  }
+
+  /* Hide customer & unit details section */
+  .qp-section:has(.qp-cust-name),
+  .qp-section:has(.qp-panel-soft) {
+    display: none !important;
+  }
+
+  /* ✅ SHOW: Print-only sections */
+  .qp-print-only {
+    display: block !important;
+  }
+
+  /* Sections ko beech me todne se bachao */
+  .qp-section {
+    page-break-inside: avoid;
+  }
+
+  .qp-cost-section {
+    page-break-inside: avoid;
+  }
+
+  /* Keep colors in print for better readability */
+  .qp-cost-final {
+    background: linear-gradient(135deg, #5b21b6, #7c3aed) !important;
+    color: #ffffff !important;
+  }
+
+  .qp-cost-subtotal {
+    background-color: #ede9ff !important;
+  }
+
+  .qp-possession-section {
+    background-color: #fef3c7 !important;
+  }
+
+  .qp-cost-summary {
+    background-color: #f0fdf4 !important;
+  }
+
+  /* Unit details in print */
+  .qp-unit-details {
+    background-color: #f9fafb !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  /* Ensure table borders print */
+  .qp-table {
+    border-collapse: collapse !important;
+  }
+
+  .qp-table thead th,
+  .qp-table tbody td {
+    border: 1px solid #e5e7eb !important;
+  }
+}

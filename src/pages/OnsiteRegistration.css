@@ -1,0 +1,516 @@
+/* src/pages/OnsiteRegistration.css */
+
+/* ---------- Page + Card ---------- */
+
+.onsite-page {
+  min-height: 100vh;
+  padding: 32px 24px;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #111827;
+}
+
+.onsite-card {
+  width: 100%;
+  max-width: 1120px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+
+.onsite-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(to right, #0f172a, #1f2937);
+}
+
+.onsite-back-btn {
+  border: none;
+  background: rgba(15, 23, 42, 0.6);
+  color: #e5e7eb;
+  font-size: 18px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.onsite-back-btn:hover {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.onsite-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f9fafb;
+  margin: 0;
+}
+
+/* ---------- Body ---------- */
+
+.onsite-body {
+  padding: 22px 22px 20px;
+  overflow-y: auto;
+}
+
+.onsite-field {
+  margin-bottom: 18px;
+}
+
+/* labels */
+
+.onsite-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.onsite-required {
+  color: #ef4444;
+  margin-left: 3px;
+  font-weight: 600;
+}
+
+/* inputs / textarea / select */
+
+.onsite-input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #f9fafb;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease, transform 0.05s ease;
+}
+
+.onsite-input:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.18);
+  background: #ffffff;
+  transform: translateY(-0.5px);
+}
+
+.onsite-input::placeholder {
+  color: #9ca3af;
+}
+
+textarea.onsite-input {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* 3-column row */
+
+.onsite-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+/* helper text */
+
+.onsite-helper {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.onsite-helper-warning {
+  font-size: 12px;
+  color: #b91c1c;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ---------- Pills (Source / Purpose / Budget / Sub Source) ---------- */
+
+.onsite-type-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.onsite-type-pill {
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+  padding: 6px 16px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #374151;
+  transition: background 0.15s ease, color 0.15s ease,
+    border-color 0.15s ease, box-shadow 0.15s ease, transform 0.08s ease;
+}
+
+.onsite-type-pill:hover {
+  background: #f3f4ff;
+}
+
+.onsite-type-pill-active {
+  background: #111827;
+  border-color: #111827;
+  color: #f9fafb;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ---------- Radios (Nationality / Age) ---------- */
+
+.onsite-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.onsite-radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #374151;
+}
+
+.onsite-radio-option input[type="radio"] {
+  width: 14px;
+  height: 14px;
+}
+
+/* ---------- Checkbox (Channel Partner) ---------- */
+
+.onsite-checkbox-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.onsite-checkbox-label {
+  display: flex;
+  align-items: center;
+}
+
+.onsite-checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Phone lookup ---------- */
+
+.onsite-lookup-banner {
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #fefce8; /* soft yellow */
+  border: 1px dashed #facc15;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.onsite-lookup-more-btn {
+  border-radius: 999px;
+  border: 1px solid #111827;
+  background: #ffffff;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: #111827;
+  font-weight: 500;
+}
+
+.onsite-lookup-more-btn:hover {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.onsite-lookup-details {
+  margin-top: 8px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  padding: 8px;
+  overflow: hidden;
+}
+
+/* table inside lookup */
+
+.onsite-lookup-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+
+.onsite-lookup-table th,
+.onsite-lookup-table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.onsite-lookup-table th {
+  font-weight: 600;
+  background: #f3f4f6;
+}
+
+.onsite-lookup-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Footer / Submit ---------- */
+
+.onsite-footer {
+  margin-top: 24px;
+  padding-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.onsite-submit-btn {
+  flex: 1 1 180px;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+  background: #102a54;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.45);
+  transition: transform 0.08s ease, box-shadow 0.15s ease, opacity 0.15s ease,
+    background 0.12s ease, color 0.12s ease;
+}
+
+.onsite-submit-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.6);
+}
+
+/* secondary action (Schedule / Copy) */
+.onsite-submit-btn-secondary {
+  background: #ffffff;
+  color: #102a54;
+  border: 1px solid #102a54;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+}
+
+.onsite-submit-btn-secondary:hover:not(:disabled) {
+  background: #0f172a;
+  color: #f9fafb;
+}
+
+/* disabled state */
+.onsite-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  background: #6b7280;
+  color: #f9fafb;
+}
+
+/* ---------- Disclaimer ---------- */
+
+.onsite-disclaimer {
+  margin-top: 18px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px dashed #e5e7eb;
+  background: #f9fafb;
+  font-size: 12px;
+  color: #4b5563;
+}
+
+/* ---------- Modals ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 40;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 20px 18px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.5);
+  width: 100%;
+  max-width: 640px;
+}
+
+.modal-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  color: #111827;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.required {
+  color: #ef4444;
+  margin-left: 3px;
+}
+
+.form-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: #f9fafb;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.18);
+  background: #ffffff;
+}
+
+.modal-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* buttons used in modal */
+
+.btn-secondary,
+.btn-primary {
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-secondary {
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #d1d5db;
+}
+
+.btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+.btn-primary {
+  background: #102a54;
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.35);
+}
+
+.btn-primary:hover {
+  background: #0b1b37;
+}
+
+/* ---------- Unit status colours in dropdown (if needed) ---------- */
+
+.onsite-input option[data-status="BOOKED"],
+.onsite-input option[data-status="SOLD"],
+.onsite-input option[data-status="BLOCKED"],
+.onsite-input option[data-status="NOT_RELEASED"] {
+  color: #b91c1c;
+}
+
+.onsite-input option[data-status="AVAILABLE"] {
+  color: #166534;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 900px) {
+  .onsite-page {
+    padding: 16px 12px;
+  }
+
+  .onsite-card {
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  .onsite-body {
+    padding: 18px 14px 16px;
+  }
+
+  .onsite-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .onsite-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .onsite-submit-btn {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+}
+
+.onsite-helper-warning {
+  font-size: 12px;
+  color: #b91c1c;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.onsite-link-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #1d4ed8;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.onsite-link-btn:hover {
+  color: #1e40af;
+}
+
