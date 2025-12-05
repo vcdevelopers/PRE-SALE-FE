@@ -409,3 +409,11 @@
   background: #e5e7eb;
   border: 1px solid #d1d5db;
 }
+
+.remarks-cell {
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

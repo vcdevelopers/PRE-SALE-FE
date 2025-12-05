@@ -1,28 +1,55 @@
-/* src/pages/OnsiteRegistration.css */
+/* ADD THIS AT THE VERY TOP */
 
-/* ---------- Page + Card ---------- */
+
+/* Logo on top */
+.onsite-logo {
+  height: 45px;
+  width: auto;
+  margin-right: 12px;
+}
 
 .onsite-page {
+  position: relative;
   min-height: 100vh;
   padding: 32px 24px;
-  background: #f3f4f6;
+  background: transparent;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   color: #111827;
+  overflow: hidden;
 }
 
+.onsite-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--brand-logo);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* Ensures the entire image is visible without clipping */
+  opacity: 0.1; /* Extremely low opacity for subtle watermark */
+  filter: none; /* No grayscale or blur to maintain original color and sharpness */
+  pointer-events: none;
+  z-index: 3; 
+}
+
+
+
 .onsite-card {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-width: 1120px;
+  max-width: 1100px;
   background: #ffffff;
-  border-radius: 18px;
-  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+  border-radius: 12px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e5e7eb;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  margin-top: 40px;
+  margin-bottom: 80px;
 }
 
 /* ---------- Header ---------- */
@@ -34,6 +61,8 @@
   padding: 14px 20px;
   border-bottom: 1px solid #e5e7eb;
   background: linear-gradient(to right, #0f172a, #1f2937);
+  position: relative; 
+  z-index: 3; 
 }
 
 .onsite-back-btn {
@@ -66,6 +95,8 @@
 .onsite-body {
   padding: 22px 22px 20px;
   overflow-y: auto;
+  position: relative; 
+  z-index: 2; /* Ensures form fields are always on top of the image */
 }
 
 .onsite-field {
@@ -121,14 +152,24 @@ textarea.onsite-input {
   min-height: 60px;
 }
 
-/* 3-column row */
-
+/* 3-column row - Primary layout for field grouping */
 .onsite-row-3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   margin-bottom: 18px;
 }
+
+/* Helper class for fields that need to span 2 columns within a 3-column grid */
+.onsite-field-span-2 {
+    grid-column: span 2 / span 2;
+}
+
+/* Field to span 3 columns (Use this class on the .onsite-field div to make it full width within any grid) */
+.onsite-field-full {
+    grid-column: 1 / -1; 
+}
+
 
 /* helper text */
 
@@ -145,6 +186,7 @@ textarea.onsite-input {
 }
 
 /* ---------- Pills (Source / Purpose / Budget / Sub Source) ---------- */
+/* Pills need to be full width for better layout, so they shouldn't be inside a grid row by default */
 
 .onsite-type-pills {
   display: flex;
@@ -284,44 +326,79 @@ textarea.onsite-input {
 }
 
 /* ---------- Footer / Submit ---------- */
-
 .onsite-footer {
   margin-top: 24px;
   padding-bottom: 4px;
   display: flex;
-  flex-wrap: wrap;
   gap: 12px;
   justify-content: flex-end;
+  position: relative;
+  z-index: 2;
 }
 
+/* Primary button clean style */
 .onsite-submit-btn {
-  flex: 1 1 180px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 28px;
   border: none;
-  border-radius: 999px;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #ffffff;
+  border-radius: 8px;
   cursor: pointer;
-  background: #102a54;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.45);
-  transition: transform 0.08s ease, box-shadow 0.15s ease, opacity 0.15s ease,
-    background 0.12s ease, color 0.12s ease;
+
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+
+  background: #102a54;  /* solid single tone */
+
+  /* Remove all previous weird effects */
+  box-shadow: 0 6px 16px rgba(15,23,42,0.28);
+  outline: none;
+  transition: all 0.2s ease;
 }
 
+/* Remove leftover pseudo elements */
+.onsite-submit-btn::before,
+.onsite-submit-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Remove gradient backgrounds if inherited */
+.onsite-submit-btn {
+  background-image: none !important;
+}
+
+/* Hover */
 .onsite-submit-btn:hover:not(:disabled) {
+  background: #0c1f3f;
+  box-shadow: 0 10px 20px rgba(15,23,42,0.38);
   transform: translateY(-1px);
-  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.6);
 }
 
-/* secondary action (Schedule / Copy) */
+/* Active click */
+.onsite-submit-btn:active {
+  transform: translateY(0px);
+}
+
+/* Disabled */
+.onsite-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Secondary action */
 .onsite-submit-btn-secondary {
   background: #ffffff;
   color: #102a54;
   border: 1px solid #102a54;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 4px 10px rgba(15,23,42,0.15);
 }
 
 .onsite-submit-btn-secondary:hover:not(:disabled) {
@@ -349,6 +426,8 @@ textarea.onsite-input {
   background: #f9fafb;
   font-size: 12px;
   color: #4b5563;
+  position: relative; 
+  z-index: 2; 
 }
 
 /* ---------- Modals ---------- */
@@ -414,6 +493,9 @@ textarea.onsite-input {
   justify-content: flex-end;
   gap: 10px;
 }
+body {
+  background: #f3f4f6;
+}
 
 /* buttons used in modal */
 
@@ -470,20 +552,35 @@ textarea.onsite-input {
   .onsite-card {
     max-width: 100%;
     border-radius: 0;
+    position: relative;
+    z-index: 2;
   }
 
   .onsite-body {
     padding: 18px 14px 16px;
+    position: relative;
+    z-index: 2;
   }
 
-  .onsite-row-3 {
+  /* Force multi-column grids to single column on small screens */
+  .onsite-row-3 { 
     grid-template-columns: 1fr;
   }
-
-  .onsite-footer {
-    flex-direction: column;
-    align-items: stretch;
+  
+  /* Ensure full-width fields take up the single column */
+  .onsite-field-full,
+  .onsite-field-span-2 {
+    grid-column: auto;
   }
+.onsite-footer {
+  /* Use Flexbox to align buttons horizontally */
+  display: flex; 
+  justify-content: flex-start; /* Aligns items to the left */
+  align-items: center;
+  padding: 20px 0 10px 0; /* Add top/bottom padding for spacing */
+  margin-top: 20px; /* Add margin above the footer section */
+  /* Remove any excessive border or shadow if present */
+}
 
   .onsite-submit-btn {
     flex: 1 1 auto;
@@ -513,4 +610,3 @@ textarea.onsite-input {
 .onsite-link-btn:hover {
   color: #1e40af;
 }
-

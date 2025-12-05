@@ -400,7 +400,7 @@ export default function SalesNavigation() {
         },
         {
           id: "on-site",
-          label: "Onsite Registration",
+          label: "Customer Registration Form ",
           route: "/onsite-registration",
           section: "pre-sales",
         },
@@ -409,17 +409,37 @@ export default function SalesNavigation() {
 
     if (userRole === "RECEPTION") {
       return [
-        { id: "dashboard", label: "Dashboard", route: "/dashboard", section: "pre-sales" },
+        {
+          id: "dashboard",
+          label: "Dashboard",
+          route: "/dashboard",
+          section: "pre-sales",
+        },
         { id: "leads", label: "Leads", route: "/leads", section: "pre-sales" },
-        { id: "profile", label: "Profile", route: "/profile", section: "pre-sales" },
+        {
+          id: "profile",
+          label: "Profile",
+          route: "/profile",
+          section: "pre-sales",
+        },
       ];
     }
 
     if (userRole === "CHANNEL PATNER") {
       return [
-        { id: "dashboard", label: "Dashboard", route: "/dashboard", section: "pre-sales" },
+        {
+          id: "dashboard",
+          label: "Dashboard",
+          route: "/dashboard",
+          section: "pre-sales",
+        },
         { id: "leads", label: "Leads", route: "/leads", section: "pre-sales" },
-        { id: "profile", label: "Profile", route: "/profile", section: "pre-sales" },
+        {
+          id: "profile",
+          label: "Profile",
+          route: "/profile",
+          section: "pre-sales",
+        },
         {
           id: "channel-partner",
           label: "Channel Partner Setup",
@@ -430,8 +450,18 @@ export default function SalesNavigation() {
     }
 
     return [
-      { id: "dashboard", label: "Dashboard", route: "/dashboard", section: "pre-sales" },
-      { id: "profile", label: "Profile", route: "/profile", section: "pre-sales" },
+      {
+        id: "dashboard",
+        label: "Dashboard",
+        route: "/dashboard",
+        section: "pre-sales",
+      },
+      {
+        id: "profile",
+        label: "Profile",
+        route: "/profile",
+        section: "pre-sales",
+      },
     ];
   };
 
@@ -460,11 +490,15 @@ export default function SalesNavigation() {
 
       if (item.id === "leads" && path.startsWith("/leads")) return true;
       if (item.id === "booking" && path.startsWith("/booking")) return true;
-      if (item.id === "inventory" && path.startsWith("/inventory-planning")) return true;
+      if (item.id === "inventory" && path.startsWith("/inventory-planning"))
+        return true;
       if (item.id === "quotation" && path.startsWith("/costsheet")) return true;
 
       // 👇 NEW: match opportunities URL
-      if (item.id === "opportunities" && path.startsWith("/sales/opportunities"))
+      if (
+        item.id === "opportunities" &&
+        path.startsWith("/sales/opportunities")
+      )
         return true;
 
       return false;
@@ -502,9 +536,7 @@ export default function SalesNavigation() {
             <button
               key={item.id}
               type="button"
-              className={`nav-tab-btn ${
-                activeTab === item.id ? "active" : ""
-              }`}
+              className={`nav-tab-btn ${activeTab === item.id ? "active" : ""}`}
               onClick={() => handleTabClick(item.id, item.route)}
             >
               {item.label}

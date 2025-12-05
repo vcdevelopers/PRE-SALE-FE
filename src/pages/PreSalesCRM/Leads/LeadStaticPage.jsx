@@ -1518,17 +1518,6 @@ const LeadStaticPage = () => {
             </div>
           </div>
 
-          {/* Lead status chip – uses name, not id */}
-          {/* <div className="lead-status-chip-row">
-            <span className="lead-status-label">Status:</span>
-            <button
-              type="button"
-              className="lead-status-chip"
-              onClick={handleOpenLeadStatusModal} // 👈 yeh add karo
-            >
-              {displayStatusName}
-            </button>
-          </div> */}
         </div>
 
         {/* RIGHT: Action buttons (Inventory / Book Flat / Payments / etc.) */}

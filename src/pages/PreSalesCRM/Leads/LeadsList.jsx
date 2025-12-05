@@ -387,6 +387,7 @@ export default function LeadsList() {
                   <th>Budget</th>
                   <th>Status</th>
                   <th>Assigned To</th>
+                  <th>Latest Remarks</th>
                 </tr>
               </thead>
               <tbody>
@@ -411,6 +412,10 @@ export default function LeadsList() {
                       lead.lead_source_name ||
                       lead.source?.name ||
                       "-";
+                      const latestRemarks =
+                        (lead.latest_remarks && lead.latest_remarks.trim()) ||
+                        "NA";
+
                     const project =
                       lead.project_name ||
                       lead.project?.name ||
@@ -464,6 +469,7 @@ export default function LeadsList() {
                         <td>{source}</td>
                         <td>{project}</td>
                         <td>{budget}</td>
+
                         <td>
                           <span
                             className={`status-badge ${getStatusBadgeClass(
@@ -474,6 +480,7 @@ export default function LeadsList() {
                           </span>
                         </td>
                         <td>{assignedTo}</td>
+                        <td className="remarks-cell">{latestRemarks}</td>
                       </tr>
                     );
                   })
